@@ -5,6 +5,7 @@ volumes:
   grafana-data:
   influxdb-data:
   influxdb-etc:
+  mqtt-data:
 
 services:
 
@@ -15,6 +16,7 @@ services:
     image: bh.cr/balenalabs/wifi-connect-rpi
     container_name: wifi-connect
     network_mode: "host"
+    restart: unless-stopped
     labels:
         io.balena.features.dbus: '1'
         io.balena.features.firmware: '1'
