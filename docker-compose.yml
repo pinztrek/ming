@@ -85,7 +85,7 @@ services:
     #network_mode: host
     container_name: mqtt
     volumes:
-        - 'mqtt-data:/mosquito/config'
+        - 'mqtt-data:/mosquitto/config'
     ports:
       - "1883:1883"
     restart: always
