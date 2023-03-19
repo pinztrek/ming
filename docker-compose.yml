@@ -95,4 +95,4 @@ services:
     environment:
 
         MQTT_CFG: "/mosquitto-no-auth.conf"
-    command: "/usr/sbin/mosquitto -c $MQTT_CFG"
+    command: /usr/sbin/mosquitto -c $MQTT_CFG
