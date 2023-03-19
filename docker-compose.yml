@@ -64,6 +64,9 @@ services:
     volumes:
         - influxdb-data:/var/lib/influxdb
         - influxdb-etc:/etc/influxdb
+    environment:
+
+        INFLUXDB_DB: "balena"
 
   # ------------------------------------------------------------------------------------
   # Grafana
@@ -89,4 +92,7 @@ services:
     ports:
       - "1883:1883"
     restart: always
-    command: ["/usr/sbin/mosquitto", "-c", "/mosquitto-no-auth.conf"]
+    environment:
+
+        MQTT_CFG: "/mosquitto-no-auth.conf"
+    command: "/usr/sbin/mosquitto -c $MQTT_CFG"
